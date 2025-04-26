@@ -1,14 +1,15 @@
 import React from 'react';
-import StyledButton from './Button.styles.js';
+import { Button, PrimaryButton } from './Button.styles';
 
-const Button = ({ children, onClick }) => {
-    console.log(children, 'asdsadsad');
-    
+const TButton = ({ children, onClick, ...args }) => {
     return (
-        <StyledButton onClick={onClick}>
-            {children}
-        </StyledButton>
+        <>
+            <Button {...args} $primary onClick={onClick}>
+                {children}
+            </Button>
+        </>
+
     );
 };
 
-export default Button;
+export default TButton;

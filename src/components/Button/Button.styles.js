@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-const StyledButton = styled.button`
+const Button = styled.button`
   background-color: #007bff;
   color: white;
   padding: 10px 20px;
@@ -11,6 +11,27 @@ const StyledButton = styled.button`
   &:hover {
     background-color: #0056b3;
   }
+
+  // ${props => props.$primary && css`
+  //   background-color: #28a745;
+
+  //   &:hover {
+  //     background-color: #218838;
+  //   }
+  // `}
+  // }
 `;
 
-export default StyledButton;
+const PrimaryButton = styled(Button)`
+  background-color: #28a745;
+  &:hover {
+    background-color: #218838;
+  }
+`
+
+// const SecondaryButton = props => <Button {...props} children={props.children.split('').reverse()} />;
+
+export {
+  Button,
+  PrimaryButton, 
+}
